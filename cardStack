@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>DEF Package</title>
+    <link rel="stylesheet" href="main/css/global.css">
+    </link>
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <style>
+
+
+.packageContent .packageInfoCard{
+
+ background-color: rgba(28, 39, 52, 1);
+    background-image: linear-gradient(to bottom, rgba(52, 86, 126, 0.3), rgba(32, 51, 74, 0.3));
+}
+.packageContent .card4b {
+   overflow:initial;
+  width: 100%;
+  min-height: 380px;
+  position: relative;
+  z-index: 1;
+   background-color: transparent;
+  background-image:none;
+  
+ }
+  .card4b .stacked-inner {
+    background-color: rgba(28, 39, 52, 1);
+    background-image: linear-gradient(to bottom, rgba(52, 86, 126, 0.3), rgba(32, 51, 74, 0.3));
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid rgba(28, 39, 52, .2);
+    border-right: 2px solid rgba(28, 39, 52, .5);
+  }
+
+  .card4b:before {
+    content: "";
+    border: 1px solid rgba(28, 39, 52, .2);
+    border-right: 2px solid rgba(28, 39, 52, .5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 7px;
+    left: 8px;
+    background-color: rgba(28, 39, 52, 1);
+    background-image: linear-gradient(to bottom, rgba(52, 86, 126, 0.3), rgba(32, 51, 74, 0.3));
+    z-index: -1;
+}
+  
+ 
+  .card4b:after {
+   content: " ";
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(28, 39, 52, .2);
+    border-right: 2px solid rgba(28, 39, 52, .5);
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    border-top: 1px solid rgb(28, 39, 52);
+    background-color: rgba(28, 39, 52, 1);
+    background-image: linear-gradient(to bottom, rgba(52, 86, 126, 0.3), rgba(32, 51, 74, 0.3));
+    z-index: -2;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div id="wrapper">
+            <div id="menu">
+                <nav class="navbar navbar-default bgnav">
+                    <!-- Brand/logo -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                       <a class="navbar-brand" href="dashboard.html">
+                  <img src="img/brandlogo.png" class="logo" width="35" height="37" alt="Digital Engagement Framework">
+                  <div class="accountInfo">
+                     <h3 class="visible-xs">Digital Engagement Framework</h3>
+                     <h3 class="hidden-xs">Framework</h3>
+                     <h3 class="hidden-xs">Digital Engagement</h3>
+                     <h3></h3>
+                  </div>
+               </a>
+                    </div>
+                    <!-- Collapsible Navbar -->
+                    <div class="collapse navbar-collapse" id="example-1">
+                        <ul class="nav navbar-nav navbar-right">
+                     <li class="nav-item ">
+                        <a class="nav-link " href="dashboard.html">Home</a>
+                     </li>
+                     <li class="nav-item active">
+                        <a class="nav-link" href="manage_engagements.html">Manage <br>Engagements</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Packages <br>Activities</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="user_management.html">Admin</a>
+                     </li>
+                  </ul>
+                    </div>
+                </nav>
+            </div>
+             <section id="pre-EngagementHeader">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-6 intro text-left">Create New Engagement</div>
+               <div class="col-sm-6 intro text-right"><strong class="bold-12">Request#</strong> <span class="light-12">Request record id goes here</span></div>
+               <div class="col-sm-12">
+                  <div class="divider margin-top-15"></div>
+               </div>
+              <div class="col-sm-3">
+                     <h6 class="bold-12 lightBlue">Client:</h6>
+                     <p class="light-12 whiteText">Name of Client Goes Here</p>
+                  </div>
+                  <div class="col-sm-3">
+                     <h6 class="bold-12 lightBlue">Topic(s):</h6>
+                     <p class="light-12 whiteText"></p>
+                  </div>
+                  <div class="col-sm-3">
+                     <h6 class="bold-12 lightBlue ">Assigned to:</h6>
+                     <p class="light-12 whiteText">Firstname Lastname</p>
+                  </div>
+                  <div class="col-sm-3">
+                     <h6 class="bold-12 lightBlue ">AE:</h6>
+                     <p class="light-12 whiteText">Firstname Lastname</p>
+                  </div>
+               <div class="clearfix"></div>
+               <div class="col-sm-3">
+                  <h6 class="bold-12 lightBlue margin-bottom-0">Engagement Type:</h6>
+                     <p class="light-12 whiteText">Client Visit</p>
+               </div>
+             	<div class="col-sm-3">
+                     <h6 class="bold-12 lightBlue margin-bottom-0">Engagement Status:</h6>
+                     <p class="light-12 whiteText">Initiated</p>
+                  </div>
+                  <div class="col-sm-3">
+                     <h6 class="bold-12 lightBlue">Date(s):</h6>
+                     <p class="light-12 whiteText">August 23-24, 2017</p>
+                  </div>
+               <div class="col-sm-3">
+                  <h6 class="bold-12 lightBlue">Requested Duration:</h6>
+                  <p class="light-12 whiteText">2 days</p>
+               </div>
+               <div class="clearfix"></div>
+            </div>
+      </section>
+            <section class="packageContainer center-block">
+                <div class="container">
+                    <div class="row">
+                        <div class="block block-content-padding packageContent bg-secondary">
+                            <div class="col-sm-12 intro text-left">
+                                Playbook Planner <div class="divider margin-top-15"></div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="intro text-left">Recommendations</div>
+                                <div><small class="light-10">(Select 1 or more to continue)</small></div>
+                            </div>
+                            <div class="col-sm-4">
+                                <p class="light-12 whiteText">Items Added to Playbook</p>
+                                <h3 class="light-40 col-sm-12 margin-top-5">3</h3>
+                            </div>
+                            <div class="col-sm-4">
+                                <p class="light-12 whiteText">Estimated Duration</p>
+                                <h3 class="col-sm-6 no-padding-left margin-top-5">
+                                    <span class="light-40">2</span><small class="margin-left-5 whiteText">days(s)</small>
+                                </h3>
+                               <h3 class="col-sm-6 no-padding-left margin-top-5">
+                                    <span class="light-40">6</span><small class="margin-left-5 whiteText">hour(s)</small>
+                                </h3>
+                            </div>
+                            <div class="clearfix"></div>
+                     
+                            <div class="cardWrapper">
+                                <div class="col-sm-4">
+								  <div class="packageInfoCard card4b">
+                                        <div class="">
+                                         <div class="stacked-inner">
+                                           <div class="title col-lg-12 d-flex">
+                                           <a href="javascript:void(0)" ><img src="img/icon-delivery.png" alt="icon-delivery"/>
+                                           <span class=" bold-12 whiteText addActivityDetail">Name of Activity.</span></a>
+                                            <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="col-lg-12 cardDetail">
+                                            <div class="bold-12 lightBlue ">Topics:</div>
+                                            <p class=" light-12 whiteText">Lorem, Ipsum, Dolor, Sit Amet Consecteteur</p>
+                                            <div class="bold-12 lightBlue ">Duration:</div>
+                                            <p class=" light-12 whiteText">1 hour</p>
+                                            <div class="bold-12 whiteText ">Linked Activities:</div>
+                                            <p class=" light-12 lightBlue">Activity 1, Activity 2, Activity 3</p>
+                                        </div>
+    
+                                        </div>
+  
+                                       </div>
+                                       
+										 
+										  </div>
+                                           
+                                           
+                                        
+                                   
+                                  
+								
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="packageInfoCard">
+                                        <div class="title col-lg-12 d-flex">
+                                           <a href="javascript:void(0)" ><img src="img/icon-delivery.png" alt="icon-delivery"/>
+                                           <span class=" bold-12 whiteText addActivityDetail">Name of Activity.</span></a>
+                                            <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="col-lg-12 cardDetail">
+                                            <div class="bold-12 lightBlue ">Topics:</div>
+                                            <p class=" light-12 whiteText">Lorem, Ipsum, Dolor, Sit Amet Consecteteur</p>
+                                            <div class="bold-12 lightBlue ">Duration:</div>
+                                            <p class=" light-12 whiteText">1 hour</p>
+                                            <div class="bold-12 whiteText ">Linked Activities:</div>
+                                            <p class=" light-12 lightBlue">Activity 1, Activity 2, Activity 3</p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="packageInfoCard">
+                                        <div class="title col-lg-12 d-flex">
+                                           <a href="javascript:void(0)" ><img src="img/icon-delivery.png" alt="icon-delivery"/>
+                                           <span class=" bold-12 whiteText addActivityDetail">Name of Activity.</span></a>
+                                            <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="col-lg-12 cardDetail">
+                                            <div class="bold-12 lightBlue ">Topics:</div>
+                                            <p class=" light-12 whiteText">Lorem, Ipsum, Dolor, Sit Amet Consecteteur</p>
+                                            <div class="bold-12 lightBlue ">Duration:</div>
+                                            <p class=" light-12 whiteText">1 hour</p>
+                                            <div class="bold-12 whiteText ">Linked Activities:</div>
+                                            <p class=" light-12 lightBlue">Activity 1, Activity 2, Activity 3</p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="col-sm-6 col-xs-12 text-left margin-top-20">
+                                <div class="pagination">
+                                    <a href="#">❮</a>
+                                    <a href="#">1</a>
+                                    <a href="#">2</a>
+                                    <a href="#">❯</a>
+                                </div>
+                            </div>-->
+                            <!--<div class="col-sm-6 col-xs-12 text-right  margin-top-20">
+                                <div class="btn-group myAssignmentsDropdown">
+                                    <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+      <span label="">10 per page</span>
+      <span class="caret"></span>
+      </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">20 per page</a>
+                                            <a href="#">30 per page</a>
+                                            <a href="#">40 per page</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>-->
+                            <div class="clearfix"></div>
+                            <div class="col-sm-12 col-xs-12 text-right margin-top-20">
+                                <button type="button" class="btn btn-default buttonLightBlue margin-bottom-10 margin-right-10">Restart Playbook Planner</button>
+                                <button type="button" class="btn btn-primary buttonPrimary margin-bottom-10" onclick="window.location.href='pre_engagement_details.html'">Continue</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </section>
+            <footer class="mainfooter" role="contentinfo">
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center footerInfo">
+                                <!--Footer Bottom--><span class="text-xs-center">© 2017 NTT DATA Services - All Rights Reserved</span>
+                                <ul class="footer-links">
+                                    <li class="hidden-xs"><a href="javascript:;">Support</a> </li>
+                                    <li class="hidden-xs"><a href="javascript:;">Site Map</a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            </footer>
+            </div>
+            </div>
+            <script src="main/js/main.js"></script>
+
+            <div class="modal fade" id="addActivityDetail" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img class="" src="img/icon-close.png" alt="Close Icon"></button>
+                            <h4 class="modal-title" id="myModalLabel">Activitiy Name Goes Here Details</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="addActivityDetailModal customTab">
+                                <ul class="nav nav-pills nav-stacked col-sm-3">
+                                    <li class="active"><a href="#activityOverview" data-toggle="pill">Overview</a></li>
+                                    <li><a href="#activityBenifits" data-toggle="pill">Details & Benifits</a></li>
+                                    <li><a href="#activitiesagenda" data-toggle="pill">Activities/Agenda</a></li>
+                                    <li><a href="#activityParticipants" data-toggle="pill">Participants</a></li>
+                                    <li><a href="#activityInputOutPut" data-toggle="pill">Pre-Workshop Activities Inputs & Outputs</a></li>
+                                    <li><a href="#activityPhotos" data-toggle="pill">Photos</a></li>
+                                    <li><a href="#activityTips" data-toggle="pill">Tips, Next Steps & Workshop Materials</a></li>
+                                    <li><a href="#" data-toggle="pill"><span><i class="fa fa-plus-circle fa-2x " aria-hidden="true"></i></span>Add to Playbook</a></li>
+                                </ul>
+                                <div class="tab-content col-sm-9">
+                                    <div class="tab-pane active" id="activityOverview">
+                                        <form>
+                                            <div class="form-group col-sm-12">
+                                                <label for="packageName" class="bold-12">Name of Package:</label>
+                                                <p class="light-12">Name of Package Goes Here</p>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label for="packageVersion" class="bold-12">Package Version:</label>
+                                                <p class="light-12">Version Info Goes Here</p>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label for="packageindustry" class="bold-12">Industry:</label>
+                                                <p class="light-12">Industry info Goes Here</p>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label for="packageDescription" class="bold-12">Description:</label>
+                                                <p class="light-12">Description goes here. Apply design thinking methodologies to generate innovative
+                                                    solutions that improve your employee experience.</p>
+                                            </div>
+                                            <div class="form-group col-sm-6">
+                                                <label for="packageDescription" class="bold-12">Suggested Price:</label>
+                                                <div class="light-12">
+                                                    <div class="col-md-1 col-sm-2  no-padding-left iconSmall"><img src="img/icon-tag.png" alt="icon-tag" /></div>
+                                                    <div class="col-md-11 col-sm-10 no-padding-horizontal whiteText">
+                                                        <h3 class="col-sm-6 margin-top-5 padding-left-5">$X.XXXXX</h3>
+                                                        <h3 class="col-sm-6 margin-top-5 padding-left-5">$X,XXXXX</h3>
+                                                        <small class="col-sm-6 padding-left-5">Min</small>
+                                                        <small class="col-sm-6 padding-left-5">Max</small>
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-6">
+                                                <label for="packageDescription" class="bold-12">Cost:</label>
+                                                <div class="light-12">
+                                                    <div class="col-md-1 col-sm-2  no-padding-left iconSmall"><img src="img/icon-tag.png" alt="icon-tag" /></div>
+                                                    <div class="col-md-11 col-sm-10 no-padding-horizontal whiteText">
+                                                        <h3 class="col-sm-6 margin-top-5 padding-left-5">$X.XXXXX</h3>
+                                                        <h3 class="col-sm-6 margin-top-5 padding-left-5">$X,XXXXX</h3>
+                                                        <small class="col-sm-6 padding-left-5">Min</small>
+                                                        <small class="col-sm-6 padding-left-5">Max</small>
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="form-group col-md-6 col-sm-6">
+                                                <label for="packageDescription" class="bold-12">Duration:</label>
+                                                <div class="light-12">
+                                                    <div class="col-sm-2 col-md-1 no-padding-left iconSmall"><img src="img/icon-calander.png" alt="icon-calander" /></div>
+                                                    <div class="col-sm-10 col-md-11 no-padding-horizontal whiteText">
+                                                        <h3 class="col-sm-6 margin-top-5 padding-left-5 ">6 Hours</h3>
+                                                        <h3 class="col-sm-6 margin-top-5 padding-left-5">2 Days</h3>
+                                                        <small class="col-sm-6 padding-left-5">Min</small>
+                                                        <small class="col-sm-6 padding-left-5">Max</small>
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </form>
+
+                                    </div>
+                                    <div class="tab-pane" id="activityBenifits">
+                                        <form>
+                                            <div class="form-group col-sm-12">
+                                                <label for="packageName" class="bold-12">Details</label>
+                                                <ul class="light-12 padding-left-15 whiteText">
+                                                    <li>NTT DATA is your Innovation Partner anywhere around the world. Headquartered
+                                                        in Tokyo, with business operations in 42 countries, we put emphasis
+                                                        on long-term commitment and combine global reach and local intimacy
+                                                        to provide premier professional services from consulting, system
+                                                        development to business IT outsourcing.</li>
+                                                    <li class="margin-top-20">Bullet2 goes here</li>
+
+                                                </ul>
+                                            </div>
+
+                                            <div class="form-group col-sm-12 margin-top-30">
+                                                <label for="benifits" class="bold-12">Benifits</label>
+                                                <div class="icon-with-content">
+                                                    <div class="light-12 col-sm-1 iconSmall no-padding-left "><img class="iconcheck" src="img/icon-check-solid-grn.png" alt="Icon Check"></div>
+                                                    <div class="light-12 col-sm-11 whiteText ">NTT DATA is your Innovation Partner anywhere around the world. Headquartered
+                                                        in Tokyo, with business operations in 42 countries, we put emphasis
+                                                        on long-term commitment and combine global reach and local intimacy
+                                                        to provide premier professional services from consulting, system
+                                                        development to business IT outsourcing</div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="light-12 col-sm-1 iconSmall no-padding-left "><img class="iconcheck" src="img/icon-check-solid-grn.png" alt="Icon Check"></div>
+                                                    <div class="light-12 col-sm-11 whiteText ">A better understanding of employee engagement</div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane" id="activitiesagenda">
+                                        <h4>Activities/Agenda</h4>
+                                        <div class="block bgSecondary block-content-padding nav-stacked-right-block">
+                                            <div class="col-sm-9 bold-12">Introduction</div>
+                                            <div class="col-sm-3 light-12 whiteText text-right">5-10 min</div>
+                                            <div class="clearfix margin-bottom-15"></div>
+                                            <div class="col-sm-9 bold-12">Introduction</div>
+                                            <div class="col-sm-3 light-12 whiteText text-right">5-10 min</div>
+                                            <div class="clearfix margin-bottom-15"></div>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="activityParticipants">
+                                        <form>
+                                            <div class="form-group col-sm-12">
+                                                <label for="packageName" class="bold-12">NTT Resources: Headcount, Types & Rates</label>
+                                                <ul class="light-12 padding-left-15 whiteText">
+                                                    <li>1-2 facititators, $XX/hours</li>
+                                                    <li>1-2 facititators, $XX/hours</li>
+
+                                                </ul>
+                                            </div>
+
+                                            <div class="form-group col-md-12 col-sm-12">
+                                                <label for="packageDescription" class="bold-12">Total # of NTT Resource:</label>
+                                                <div class="light-12">
+                                                    <div class="col-sm-2 col-md-1 no-padding-left iconSmall"><img src="img/icon-calander.png" alt="icon-calander" /></div>
+                                                    <div class="col-sm-10 col-md-11 no-padding-horizontal whiteText">
+                                                        <h3 class="col-sm-3 margin-top-5 padding-left-5 ">X</h3>
+                                                        <h3 class="col-sm-9 margin-top-5 padding-left-5">X</h3>
+                                                        <small class="col-sm-3 padding-left-5">Min</small>
+                                                        <small class="col-sm-9 padding-left-5">Max</small>
+
+
+                                                    </div>
+                                                    <div class="clearfix"></div>
+
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="form-group col-md-12 col-sm-12">
+                                                <label for="packageDescription" class="bold-12"> NTT Duration:</label>
+                                                <div class="light-12">
+                                                    <div class="col-sm-2 col-md-1 no-padding-left iconSmall"><img src="img/icon-calander.png" alt="icon-calander" /></div>
+                                                    <div class="col-sm-10 col-md-11 no-padding-horizontal whiteText">
+                                                        <h3 class="col-sm-3 margin-top-5 padding-left-5 ">XXmin</h3>
+                                                        <h3 class="col-sm-9 margin-top-5 padding-left-5">XXmin(or hours)</h3>
+                                                        <small class="col-sm-3 padding-left-5">Min</small>
+                                                        <small class="col-sm-6 padding-left-5">Max</small>
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="form-group col-sm-12">
+                                                <label for="packageName" class="bold-12">Client Resource</label>
+                                                <ul class="light-12 padding-left-15 whiteText">
+                                                    <li>Participants must be able to represent experiences across the origanization</li>
+                                                    <li>1-2 facititators, $XX/hours</li>
+
+                                                </ul>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane" id="activityInputOutPut">
+                                         <form>
+                                             <div class="nav-stacked-right-block">
+                                            <div class="form-group col-sm-12">
+                                                <label for="packageName" class="bold-12">Pre-Workshop Activities</label>
+                                                <ul class="light-12 padding-left-15 whiteText">
+                                                    <li>Name of acitivity(required)</li>
+                                                    <li>Name of acitivity(optional)</li>
+                                                </ul>
+                                            </div>
+
+                                             <div class="form-group col-sm-12">
+                                                <label for="packageName"class="bold-12">Inputs</label>
+                                                <ul class="light-12 padding-left-15 whiteText">
+                                                    <li>Name of input 1</li>
+                                                   <li>Name of input 2</li>
+                                                     <li>Name of input 3</li>
+                                                </ul>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label for="packageName"class="bold-12">Inputs</label>
+                                                <div class="light-12">
+                                                    <a href="#" class="lightBlue">
+                                                    <div class="col-sm-1 iconSmall no-padding-left"><img src="img/icon-pdf.png" alt="icom PDF"/></div>
+                                                    <div class="col-sm-11">Name of sample input file</div></a>
+                                                   <div class=" clearfix margin-bottom-15"></div>
+                                                      <a href="#" class="lightBlue">
+                                                    <div class="col-sm-1 iconSmall no-padding-left"><img src="img/icon-pdf.png" alt="icom PDF"/></div>
+                                                    <div class="col-sm-11">Name of sample input file</div></a>
+                                                 <div class=" clearfix margin-bottom-15"></div>
+                                                     <a href="#" class="lightBlue">
+                                                    <div class="col-sm-1 iconSmall no-padding-left"><img src="img/icon-pdf.png" alt="icom PDF"/></div>
+                                                    <div class="col-sm-11">Name of sample input file</div></a>
+                                                    <div class="clearfix margin-bottom-15"></div>
+
+
+                                                </div>
+
+                                                
+                                            </div>
+                                              <div class="form-group col-sm-12">
+                                                <label for="packageName bold-12">Output</label>
+                                                <ul class="light-12 padding-left-15 whiteText">
+                                                    <li>Name of output 1</li>
+                                                   <li>Name of output 2</li>
+                                                     <li>Name of output 3</li>
+                                                </ul>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label for="packageName bold-12">Sample Output</label>
+                                                <ul class="light-12 padding-left-15 whiteText">
+                                                    <li></li>
+                                                   
+                                                </ul>
+                                            </div>
+                                             </div>
+                                         </form>
+                                        
+                                    </div>
+                                    <div class="tab-pane" id="activityPhotos">
+                                      <div class="grid nav-stacked-right-block">
+                                          <label class="bold-12">Photos</label>
+                                         <div class="grid-row">
+                                         <div class="col-sm-6 col-md-4"><img class="photo" src="img/photos/photo.png" alt="Photo"></div>  
+                                         <div class="col-sm-6 col-md-4"><img class="photo" src="img/photos/photo.png" alt="Photo"></div>  
+                                         <div class="col-sm-6 col-md-4"><img class="photo" src="img/photos/photo.png" alt="Photo"></div>  
+                                         <div class="col-sm-6 col-md-4"><img class="photo" src="img/photos/photo.png" alt="Photo"></div>  
+                                          <div class="col-sm-6 col-md-4"><img class="photo" src="img/photos/photo.png" alt="Photo"></div>  
+                                         <div class="col-sm-6 col-md-4"><img class="photo" src="img/photos/photo.png" alt="Photo"></div>  
+                                         
+                                      </div>
+                                    </div>
+                                    </div>
+                                    <div class="tab-pane" id="activityTips">
+                                        <form>
+                                             <div class="nav-stacked-right-block">
+                                            <div class="form-group col-sm-12">
+                                                <label for="packageName" class="bold-12">Tips</label>
+                                                <ul class="light-12 padding-left-15 whiteText">
+                                                    <li>Tips</li>
+                                                    <li>Tips</li>
+                                                </ul>
+                                            </div>
+
+                                             <div class="form-group col-sm-12">
+                                                <label for="packageName"class="bold-12">Next Steps</label>
+                                                <ul class="light-12 padding-left-15 whiteText">
+                                                    <li>Steps</li>
+                                                   <li>Steps</li>
+                                                                                                 </ul>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label for="packageName"class="bold-12">Workshop Materials</label>
+                                                <div class="light-12">
+                                                    <a href="#" class="lightBlue">
+                                                    <div class="col-sm-1 iconSmall no-padding-left"><img src="img/icon-pdf.png" alt="icom PDF"/></div>
+                                                    <div class="col-sm-11">Action card.docx</div></a>
+                                                      <div class=" clearfix margin-bottom-15"></div>
+                                                       <a href="#" class="lightBlue">
+                                                    <div class="col-sm-1 iconSmall no-padding-left"><img src="img/icon-pdf.png" alt="icom PDF"/></div>
+                                                    <div class="col-sm-11">Action card.docx</div></a>
+                                                      <div class=" clearfix margin-bottom-15"></div>
+                                                  
+                                                     <a href="#" class="lightBlue">
+                                                    <div class="col-sm-1 iconSmall no-padding-left"><img src="img/icon-pdf.png" alt="icom PDF"/></div>
+                                                     <div class="col-sm-11">Action card.docx</div></a>
+                                                      <div class=" clearfix margin-bottom-15"></div>
+                                                  
+
+
+                                                </div>
+
+                                                
+                                            </div>
+                                           
+                                             </div>
+                                         </form>
+                                    </div>
+                                </div>
+                                <!-- tab content -->
+
+                            </div>
+                        </div>
+                        <!-- <div class="modal-footer col-sm-12">
+                            <button type="button" class="btn btn-default buttonLightBlue" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary buttonPrimary">Submit</button>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+</body>
+
+</html>
